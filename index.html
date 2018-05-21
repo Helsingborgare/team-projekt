@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Helsingborgare</title>
+</head>
+
+<body>
+
+    <nav ng-controller="AuthCtrl" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">allahelsingborgare.se</a>
+            </div>
+            <ul class="nav navbar-nav"></ul>
+            <li class="active">
+                <a href="#!/">Home</a>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+            <li ng-if="!user">
+                <a href="#!/sign-up">
+                    <span class="glyphicon glyphicon-user"></span>Sign Up</a>
+            </li>
+            <li ng-if="!user">
+                <a href="#!/login">
+                    <span class="glyphicon glyphicon-log-in"></span>Login</a>
+            </li>
+            <li ng-if="user">
+                <a href ng-click="signOut()">Sign Out</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCXJormr0aE-LjTKjtw7wbdyQEPV4Kfrxk",
+            authDomain: "look-around-89d60.firebaseapp.com",
+            databaseURL: "https://look-around-89d60.firebaseio.com",
+            projectId: "look-around-89d60",
+            storageBucket: "",
+            messagingSenderId: "538552151356"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+</body>
+
+</html>
