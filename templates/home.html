@@ -7,6 +7,41 @@
 <div ng-hide="user">
     <h4>Sign In to publish your story</h4>
 </div>
-<div>
-    <img src="http://farm6.staticflickr.com/5147/5613280113_b9457ccb96_b.jpg">
+<div >
+    <h1>{{location}} Nu: </h1>
+<section id="current">
+    <p>Today it is <strong>{{description}}</strong></p>
+    <img class="weather-img" ng-src="{{image}}" alt="">
+    <p>It is {{temp_c}}&deg;c today</p>
+    
+</section>
+</div>
+<div class="row">
+<div class="col-6">
+    <form class="pictureForm" ng-submit="updatePicture(picture)">
+        <h2>Profile picture:</h2>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAG1BMVEXMzMyWlpacnJyxsbGqqqq3t7fFxcW+vr6jo6Or2gysAAABO0lEQVR4nO3W2W7DIBAFUMB4+f8vLt7qpUnqSAlppXMerHnwlcZjBIQAAAAAAAAAAAAAAAAAAAAAAADAJ3Q5xdTMdZPi0P8oX5N5ty7FUR7rPJXdqXxN5u2GGNvQxFgm2Zey9Dj2tytflHm7XHoKYeystJbGRwyH8kWZOrqpqWGcZj8NeleGqee4PK5nPmKYlnaKzdrfrhyVb2jb04f8lvmEHJe10oRlxezK5Y2cj6v/90x9zbIBrZ00h3LSnfejC5nqyppJYd/UrenmePghlzKVlWGnedaP1nt7aPBaprLhe595tAOl9Rc8kamr3xZ13g6CfDoT2jgM26ivZSrL26QfnNJp3H7Tc5nK5mvTPMe796b1QIxPZGrbN3X3JjttWfnmh/yZ2y8AAAAAAAAAAAAAAAAAAAAAAPwvXw5sBo8Zlw4DAAAAAElFTkSuQmCC" alt=""><br>
+<button type="submit">Change Picture</button>
+</form>
+</div>
+
+<div class="col-6">
+    <form class="form" ng-submit="update(user)">
+        <p>Email:</p>
+        <input type="email" ng-model="user.email" placeholder="Email">
+        <p>Username:</p>
+        <input type="text" ng-model="user.username" placeholder="Username">
+        <p>About:</p>
+        <input type="text" ng-model="user.about" placeholder="About"><br>
+        <button type="submit">Change information</button>
+    </form>
+    <form class="passwordForm" ng-submit="updatePassword(password)">
+        <p>Write your password</p>
+            <input type="password" ng-model="user.password" placeholder="Password">
+            <p>Write your new password</p>
+            <input type="password" ng-model="user.newPassword" placeholder="Your new Password">
+            <p>Plz confirm your new password</p>
+            <input type="password" ng-model="user.newPassword"  placeholder="Confirm Password"><br>
+            <button type="submit">Change Password</button>
+    </form>
 </div>

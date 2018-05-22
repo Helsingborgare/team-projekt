@@ -26,6 +26,36 @@ nav li {
   text-align: center;
 }
 
-img {
+* {
+  box-sizing: border-box;
+}
+.col-6, .col-12 {
+  float: left;
+
+}
+.row ::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.col-12{
   width: 100%;
 }
+.col-6 {
+  width: 50%;
+}
+div {
+  align-content: center;
+  text-align: center;
+}
+button{
+  margin-top: 30px;
+}
+@media screen and (max-width: 640px) {
+
+  .col-6, .col-12 {
+      width: 100%;
+  }
+}
+
+

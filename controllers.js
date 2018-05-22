@@ -1,6 +1,6 @@
 // controller.js
 var app = angular.module('App');
-app.controller('FirstController', ['$scope', '$firebaseAuth', function ($scope, $firebaseAuth) {
+app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', function ($scope, $firebaseAuth, $http) {
     $firebaseAuth().$onAuthStateChanged(function (user) {
         console.log(user);
         if (user) {
@@ -8,8 +8,22 @@ app.controller('FirstController', ['$scope', '$firebaseAuth', function ($scope, 
         } else {
             $scope.user = null;
         }
-    })
+    });
+    $scope.weather = function () {
+        var url = 'https://api.apixu.com/v1/current.json?key=f1555b46f3954e54b2a71106182404&q=Helsingborg';
+        $http.get(url)
+            .then(function (data) {
+                // eftersom vad vi får tillbaka är i data array måste vi skriva så här 
+                $scope.data = data.data;
+                console.log(data.data);
+                $scope.location = data.data.location.name;
+                $scope.description = data.data.current.condition.text;
+                $scope.image = data.data.current.condition.icon;
+                $scope.temp_c = data.data.current.temp_c;
+            });
+    };
 
+    $scope.weather();
 
 }]);
 
