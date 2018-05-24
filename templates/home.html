@@ -16,7 +16,30 @@
     
 </section>
 </div>
-<div class="row">
+<div ng-controller="eventCtrl">
+    <div id="events">
+        <h1>Events</h1>
+        <div ng-repeat="x in events">
+            <p>
+                {{x.content.plain_text}}
+            </p>
+            <h2>
+                {{x.location.formatted_address}}
+            </h2>
+            <h3>
+                {{x.date}}
+            </h3>
+
+            <h2>
+                {{x.organizers[0].organizer}}
+            </h2>
+
+
+        </div>
+
+    </div>
+</div>
+<div class="row" ng-if="user">
 <div class="col-6">
     <form class="pictureForm" ng-submit="updatePicture(picture)">
         <h2>Profile picture:</h2>
