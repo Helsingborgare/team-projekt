@@ -1,15 +1,14 @@
-<section>
-    <form class="form" ng-submit="signUp(user)">
+<div id="sinup-sida">
+<section class="sin-up">
+    <form class="sign-form" ng-submit="signUp(user)">
+        <h2 class="sin">Regrestera dig Här:</h2>
         <input type="email" ng-model="user.email" placeholder="Email">
         <input type="password" ng-model="user.password" placeholder="Password">
         <input type="text" ng-model="user.username" placeholder="Username">
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="sing-up">Sign Up</button>
         <p>
             <small>{{error}}</small>
         </p>
     </form>
 </section>
-<br>
-<div>
-    <img src="https://i0.wp.com/voyagemaniac.com/wp-content/uploads/2017/11/Things-To-Do-In-Helsingborg-1.jpg?fit=800%2C342&ssl=1">
 </div>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Helsingborgare</title>
 </head>
@@ -19,14 +20,12 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">allahelsingborgare.se</a>
             </div>
-            <ul class="nav navbar-nav"></ul>
+            <ul class="nav navbar-nav">
             <li class="active">
                 <a href="#!/">Home</a>
             </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right"></ul>
             <li ng-if="!user">
-                <a href="#!/sign-up">
+                <a href="#!/sign-up" class="singup-w">
                     <span class="glyphicon glyphicon-user"></span>Sign Up</a>
             </li>
             <li ng-if="!user">
@@ -37,11 +36,16 @@
                 <a href ng-click="signOut()">Sign Out</a>
             </li>
             </ul>
+            <!-- <ul class="nav navbar-nav navbar-right"></ul> -->
+
         </div>
     </nav>
         
 
     <div ng-view></div>
+<footer class="footer">
+<p>Created by team <a href="#">@LookAround</a> </p>
+</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>

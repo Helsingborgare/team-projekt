@@ -1,14 +1,15 @@
-<h1>Hej Alla Helsingborgare !!!</h1>
+<div class="ba-img">
+<h1 class="head-line">Hej Alla Helsingborgare !!</h1>
 
 <div ng-show="user">
     <h1>Weclome {{user.displayName}}</h1>
 </div>
 
 <div ng-hide="user">
-    <h4>Sign In to publish your story</h4>
+    <h4 class="head-T">Sign In to publish your story</h4>
 </div>
-<div >
-    <h1>{{location}} Nu: </h1>
+<div class="weather">
+    <h1>{{location}}</h1>
 <section id="current">
     <p>Today it is <strong>{{description}}</strong></p>
     <img class="weather-img" ng-src="{{image}}" alt="">
@@ -16,27 +17,24 @@
     
 </section>
 </div>
+</div>
 <div ng-controller="eventCtrl">
-    <div id="events">
-        <h1>Events</h1>
-        <div ng-repeat="x in events">
-            <p>
+    <div id="events" class="events">
+        <h1 class="first-line">Events</h1>
+        <div ng-repeat="x in events" class="event">
+             <h2>
+                {{x.organizers[0].organizer}}
+            </h2>
+            <h3 class="first-event">
                 {{x.content.plain_text}}
-            </p>
+            </h3>
             <h2>
                 {{x.location.formatted_address}}
             </h2>
             <h3>
                 {{x.date}}
             </h3>
-
-            <h2>
-                {{x.organizers[0].organizer}}
-            </h2>
-
-
-        </div>
-
+         </div>
     </div>
 </div>
 <div class="row" ng-if="user">
