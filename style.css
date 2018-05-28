@@ -13,6 +13,13 @@ h4 {
   text-align: center;
 }
 
+/* udataring sida */
+
+.name {
+  font-family: 'Pacifico', cursive;
+  color: bisque;
+}
+
 nav li {
   display: inline;
 }
@@ -58,6 +65,113 @@ button {
   .col-12 {
     width: 100%;
   }
+}
+
+.A-form {
+  display: flex;
+  height: 530px;
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 35px;
+}
+
+.pictureForm {
+  width: 18%;
+  margin-right: 50px;
+  height: 377px;
+  padding: 10px;
+}
+
+.change {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 240px;
+  height: 47px;
+  cursor: pointer;
+  margin: 20px auto;
+  border: 2px solid;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  font: normal 23px/45px "Advent Pro", Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+
+.change:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 1);
+}
+
+.change:active {
+  background: rgba(33, 224, 163, 1);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.img-ex{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.text-typ{
+font-family: 'Pacifico', cursive; 
+}
+
+.profile-t {
+  color: rgb(0, 0, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.Email-change {
+  float: right;
+  margin: 4%;
+  height: 377px;
+}
+
+.password-Form {
+  float: right;
+  margin: 4%;
+  height: 377px;
+}
+
+.Email-change input {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 44px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 4px solid rgb(0, 0, 0);
+  background: content-box;
+  color: rgb(0, 0, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.password-Form input {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 44px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 4px solid rgb(0, 0, 0);
+  background: content-box;
+  color: rgb(0, 0, 0);
+  font-family: 'Pacifico', cursive;
 }
 
 .navbar-inverse {
@@ -160,10 +274,11 @@ button {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   top: 60px;
   margin-left: 50px;
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
-.events {}
+.events {
+}
 
 .first-line {
   font-family: 'Pacifico', cursive;
@@ -180,7 +295,7 @@ button {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 40%;
+  width: 35%;
   height: 250px;
   padding: 44px;
   overflow: overlay;
@@ -199,7 +314,11 @@ button {
   margin-bottom: 50px;
   display: inline-block;
   margin-right: 18px;
-  margin-left: 18px;
+  margin-left: 65px;
+}
+
+.line-color{
+  color: white;
 }
 
 .partners__ul {
@@ -215,7 +334,7 @@ button {
 
 /* sing up sida  */
 
-#sinup-sida{
+#sinup-sida {
   background-image: url(img/1.jpg);
   width: 100%;
   height: 100%;
@@ -223,12 +342,11 @@ button {
   margin-top: 20px;
 }
 
-
 .sin-up {
   width: 35%;
   margin: 20px 0% 0% 11%;
-  position: absolute;;}
-
+  position: absolute;
+}
 
 .sign-form input {
   position: relative;
@@ -247,7 +365,6 @@ button {
 ::-webkit-input-placeholder {
   color: rgb(255, 255, 255);
 }
-
 
 .sing-up {
   -webkit-box-sizing: content-box;
@@ -298,11 +415,9 @@ button {
   font-size: 22px;
 }
 
-
-
 /* login sida  */
 
-.login-sida{
+.login-sida {
   background-image: url(img/1.jpg);
   width: 100%;
   height: 100%;
@@ -310,13 +425,13 @@ button {
   margin-top: 20px;
 }
 
-.log-in{
+.log-in {
   width: 35%;
   margin: 20px 0% 0% 11%;
   position: absolute;
 }
 
-.login-form input{
+.login-form input {
   position: relative;
   display: block;
   margin-bottom: 26px;

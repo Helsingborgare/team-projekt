@@ -2,7 +2,7 @@
 <h1 class="head-line">Hej Alla Helsingborgare !!</h1>
 
 <div ng-show="user">
-    <h1>Weclome {{user.displayName}}</h1>
+    <h1 class="name">Weclome {{user.displayName}}</h1>
 </div>
 
 <div ng-hide="user">
@@ -18,7 +18,37 @@
 </section>
 </div>
 </div>
-<div ng-controller="eventCtrl">
+
+<div class="row  A-form" ng-if="user">    
+        <form class="pictureForm" ng-submit="updatePicture(picture)">
+            <h2 class="profile-t">Profile picture:</h2>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAG1BMVEXMzMyWlpacnJyxsbGqqqq3t7fFxcW+vr6jo6Or2gysAAABO0lEQVR4nO3W2W7DIBAFUMB4+f8vLt7qpUnqSAlppXMerHnwlcZjBIQAAAAAAAAAAAAAAAAAAAAAAADAJ3Q5xdTMdZPi0P8oX5N5ty7FUR7rPJXdqXxN5u2GGNvQxFgm2Zey9Dj2tytflHm7XHoKYeystJbGRwyH8kWZOrqpqWGcZj8NeleGqee4PK5nPmKYlnaKzdrfrhyVb2jb04f8lvmEHJe10oRlxezK5Y2cj6v/90x9zbIBrZ00h3LSnfejC5nqyppJYd/UrenmePghlzKVlWGnedaP1nt7aPBaprLhe595tAOl9Rc8kamr3xZ13g6CfDoT2jgM26ivZSrL26QfnNJp3H7Tc5nK5mvTPMe796b1QIxPZGrbN3X3JjttWfnmh/yZ2y8AAAAAAAAAAAAAAAAAAAAAAPwvXw5sBo8Zlw4DAAAAAElFTkSuQmCC" alt="" class="img-ex"><br>
+    <button type="submit" class="change">Change Picture</button>
+    </form>
+    
+    
+    <form class="Email-change" ng-submit="update(user)">
+            <p class="text-typ">Email:</p>
+            <input type="email" ng-model="user.email" placeholder="Email" class="line">
+            <p class="text-typ">Username:</p>
+            <input type="text" ng-model="user.username" placeholder="Username">
+            <p class="text-typ">About:</p>
+            <input type="text" ng-model="user.about" placeholder="About"><br>
+            <button type="submit" class="change">Change information</button>
+        </form>
+
+        <form class="password-Form" ng-submit="updatePassword(password)">
+            <p class="text-typ">Write your password</p>
+                <input type="password" ng-model="user.password" placeholder="Password">
+                <p class="text-typ">Write your new password</p>
+                <input type="password" ng-model="user.newPassword" placeholder="Your new Password">
+                <p class="text-typ">Plz confirm your new password</p>
+                <input type="password" ng-model="user.newPassword"  placeholder="Confirm Password"><br>
+                <button type="submit" class="change">Change Password</button>
+        </form>
+</div>
+
+<div ng-if="!user" ng-controller="eventCtrl">
     <div id="events" class="events">
         <h1 class="first-line">Events</h1>
         <div ng-repeat="x in events" class="event">
@@ -37,32 +67,4 @@
          </div>
     </div>
 </div>
-<div class="row" ng-if="user">
-<div class="col-6">
-    <form class="pictureForm" ng-submit="updatePicture(picture)">
-        <h2>Profile picture:</h2>
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAG1BMVEXMzMyWlpacnJyxsbGqqqq3t7fFxcW+vr6jo6Or2gysAAABO0lEQVR4nO3W2W7DIBAFUMB4+f8vLt7qpUnqSAlppXMerHnwlcZjBIQAAAAAAAAAAAAAAAAAAAAAAADAJ3Q5xdTMdZPi0P8oX5N5ty7FUR7rPJXdqXxN5u2GGNvQxFgm2Zey9Dj2tytflHm7XHoKYeystJbGRwyH8kWZOrqpqWGcZj8NeleGqee4PK5nPmKYlnaKzdrfrhyVb2jb04f8lvmEHJe10oRlxezK5Y2cj6v/90x9zbIBrZ00h3LSnfejC5nqyppJYd/UrenmePghlzKVlWGnedaP1nt7aPBaprLhe595tAOl9Rc8kamr3xZ13g6CfDoT2jgM26ivZSrL26QfnNJp3H7Tc5nK5mvTPMe796b1QIxPZGrbN3X3JjttWfnmh/yZ2y8AAAAAAAAAAAAAAAAAAAAAAPwvXw5sBo8Zlw4DAAAAAElFTkSuQmCC" alt=""><br>
-<button type="submit">Change Picture</button>
-</form>
-</div>
 
-<div class="col-6">
-    <form class="form" ng-submit="update(user)">
-        <p>Email:</p>
-        <input type="email" ng-model="user.email" placeholder="Email">
-        <p>Username:</p>
-        <input type="text" ng-model="user.username" placeholder="Username">
-        <p>About:</p>
-        <input type="text" ng-model="user.about" placeholder="About"><br>
-        <button type="submit">Change information</button>
-    </form>
-    <form class="passwordForm" ng-submit="updatePassword(password)">
-        <p>Write your password</p>
-            <input type="password" ng-model="user.password" placeholder="Password">
-            <p>Write your new password</p>
-            <input type="password" ng-model="user.newPassword" placeholder="Your new Password">
-            <p>Plz confirm your new password</p>
-            <input type="password" ng-model="user.newPassword"  placeholder="Confirm Password"><br>
-            <button type="submit">Change Password</button>
-    </form>
-</div>
