@@ -9,31 +9,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Helsingborgare</title>
 </head>
 
 <body>
 
     <nav ng-controller="AuthCtrl" class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">allahelsingborgare.se</a>
+        <div class="container-fluid ">
+            <div class="navbar-header bk-g">
+                <a class="navbar-brand" href="#"> allahelsingborgare.se</a>
             </div>
             <ul class="nav navbar-nav">
-            <li class="active">
-                <a href="#!/">Home</a>
+            <li class="bk-g">
+                <a class="bk-g" href="#!/">Home</a>
             </li>
-            <li ng-if="!user">
-                <a href="#!/sign-up" class="singup-w">
+            <li ng-if="!user"class="bk-g">
+                <a class="bk-g" href="#!/sign-up">
                 <span class="glyphicon glyphicon-user"></span>Sign Up</a>
             </li>
-            <li ng-if="!user">
-                <a href="#!/login">
+            <li ng-if="!user"class="bk-g">
+                <a  class="bk-g"href="#!/login">
                     <span class="glyphicon glyphicon-log-in"></span>Login</a>
             </li>
-            <li ng-if="user">
-                <a href ng-click="signOut()">Sign Out</a>
+            <li ng-if="user"class="bk-g">
+                <a class="bk-g" href ng-click="signOut()">Sign Out</a>
             </li>
             </ul> 
             <ul class="nav navbar-nav navbar-right"></ul>
@@ -50,8 +50,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
-    <script src="app.js"></script>
-    <script src="controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>

@@ -3,7 +3,7 @@ body {
 }
 
 .ba-img {
-  background-image: url(img/4.jpg!d);
+  background-image: url(../img/4.jpg!d);
   height: 400px;
   background-position: center;
 }
@@ -223,12 +223,8 @@ font-family: 'Pacifico', cursive;
   text-align: center;
 }
 
-.navbar-inverse .navbar-nav:hover {
-  background-color: rgb(231, 76, 76);
-}
-
-.navbar-inverse .navbar-nav>.active>a:hover {
-  background-color: rgb(231, 76, 76);
+.bk-g:hover {
+  background-color: grey;
 }
 
 .glyphicon-log-in:before {
@@ -335,7 +331,7 @@ font-family: 'Pacifico', cursive;
 /* sing up sida  */
 
 #sinup-sida {
-  background-image: url(img/1.jpg);
+  background-image: url(../img/1.jpg);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -418,7 +414,7 @@ font-family: 'Pacifico', cursive;
 /* login sida  */
 
 .login-sida {
-  background-image: url(img/1.jpg);
+  background-image: url(../img/1.jpg);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -443,4 +439,9 @@ font-family: 'Pacifico', cursive;
   background: content-box;
   color: whitesmoke;
   font-family: 'Pacifico', cursive;
+}
+
+.ev-img {
+  max-width: 100%;
+  height: 120px;
 }

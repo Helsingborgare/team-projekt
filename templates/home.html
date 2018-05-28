@@ -18,7 +18,7 @@
 </section>
 </div>
 </div>
-
+<!--profiler-->
 <div class="row  A-form" ng-if="user">    
         <form class="pictureForm" ng-submit="updatePicture(picture)">
             <h2 class="profile-t">Profile picture:</h2>
@@ -48,6 +48,7 @@
         </form>
 </div>
 
+<!--events-->
 <div ng-if="!user" ng-controller="eventCtrl">
     <div id="events" class="events">
         <h1 class="first-line">Events</h1>
@@ -56,7 +57,7 @@
                 {{x.organizers[0].organizer}}
             </h2>
             <h3 class="first-event">
-                {{x.content.plain_text}}
+                <img ng-src="{{x.featured_media.source_url}}" class="ev-img">
             </h3>
             <h2>
                 {{x.location.formatted_address}}
