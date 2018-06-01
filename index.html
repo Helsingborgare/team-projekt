@@ -58,20 +58,20 @@
 
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCXJormr0aE-LjTKjtw7wbdyQEPV4Kfrxk",
-            authDomain: "look-around-89d60.firebaseapp.com",
-            databaseURL: "https://look-around-89d60.firebaseio.com",
-            projectId: "look-around-89d60",
-            storageBucket: "",
-            messagingSenderId: "538552151356"
-        };
-        firebase.initializeApp(config);
-    </script>
-
+    <script src="js/ng-shim.min.js"></script>   
+    <script src="js/upload.min.js"></script>   
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCXJormr0aE-LjTKjtw7wbdyQEPV4Kfrxk",
+      authDomain: "look-around-89d60.firebaseapp.com",
+      databaseURL: "https://look-around-89d60.firebaseio.com",
+      projectId: "look-around-89d60",
+      storageBucket: "look-around-89d60.appspot.com",
+      messagingSenderId: "538552151356"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 </body>
 

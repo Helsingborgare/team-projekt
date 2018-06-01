@@ -1,6 +1,6 @@
 // controller.js
 var app = angular.module('App');
-app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', function ($scope, $firebaseAuth, $http) {
+app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', 'Upload', function ($scope, $firebaseAuth, $http, Upload) {
     $firebaseAuth().$onAuthStateChanged(function (user) {
         console.log(user);
         if (user) {
@@ -24,6 +24,33 @@ app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', function 
     };
 
     $scope.weather();
+
+    $scope.upload = function (file) {   
+        console.log(file);  
+       
+        
+        var user = firebase.auth().currentUser;
+        console.log(user);
+        
+   
+
+        user.updateProfile({
+            photoURL: file
+       })
+       .then(function (s) {
+        console.log(s);
+        alert('updated profile');
+        
+        
+       })
+       .catch(function (err) {
+           console.log(err);
+           
+       });
+
+    };
+
+    
 
 }]);
 
@@ -97,19 +124,101 @@ app.controller('AuthCtrl', ['$scope', '$location', '$firebaseAuth', function ($s
         $location.path('/');
     };
 
-    }]);
-    
-    
-    app.controller('eventCtrl',['$scope','$http', function ($scope, $http) {
-   
-        $http.get("https://api.helsingborg.se/event/json/wp/v2/event/").then(function (events) {
-            $scope.events= events.data;
-    
-            console.log(events);
-           
-        });
-    }]);
+}]);
 
+
+app.controller('eventCtrl', ['$scope', '$http', function ($scope, $http) {
+
+    $http.get("https://api.helsingborg.se/event/json/wp/v2/event/").then(function (events) {
+        $scope.events = events.data;
+
+        console.log(events);
+
+    });
+}]);
+
+//image
+app.controller('UploadController', function ($scope, fileReader) {
+    $scope.imageSrc = "";
+
+    $scope.$on("fileProgress", function (e, progress) {
+        $scope.progress = progress.loaded / progress.total;
+    });
+});
+
+
+
+
+app.directive("ngFileSelect", function (fileReader, $timeout) {
+    return {
+        scope: {
+            ngModel: '='
+        },
+        link: function ($scope, el) {
+            function getFile(file) {
+                fileReader.readAsDataUrl(file, $scope)
+                    .then(function (result) {
+                        $timeout(function () {
+                            $scope.ngModel = result;
+                        });
+                    });
+            }
+
+            el.bind("change", function (e) {
+                var file = (e.srcElement || e.target).files[0];
+                getFile(file);
+            });
+        }
+    };
+});
+
+app.factory("fileReader", function ($q, $log) {
+    var onLoad = function (reader, deferred, scope) {
+        return function () {
+            scope.$apply(function () {
+                deferred.resolve(reader.result);
+            });
+        };
+    };
+
+    var onError = function (reader, deferred, scope) {
+        return function () {
+            scope.$apply(function () {
+                deferred.reject(reader.result);
+            });
+        };
+    };
+
+    var onProgress = function (reader, scope) {
+        return function (event) {
+            scope.$broadcast("fileProgress", {
+                total: event.total,
+                loaded: event.loaded
+            });
+        };
+    };
+
+    var getReader = function (deferred, scope) {
+        var reader = new FileReader();
+        reader.onload = onLoad(reader, deferred, scope);
+        reader.onerror = onError(reader, deferred, scope);
+        reader.onprogress = onProgress(reader, scope);
+        return reader;
+    };
+
+    var readAsDataURL = function (file, scope) {
+        var deferred = $q.defer();
+
+        var reader = getReader(deferred, scope);
+        reader.readAsDataURL(file);
+
+        return deferred.promise;
+    };
+
+    return {
+        readAsDataUrl: readAsDataURL
+    };
+});
 
 
 

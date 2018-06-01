@@ -19,11 +19,12 @@
 </div>
 </div>
 <!--profiler-->
-<div class="row  A-form" ng-if="user">    
+<div class="row  A-form" ng-if="user" ng-controller="UploadController">    
         <form class="pictureForm" ng-submit="updatePicture(picture)">
-            <h2 class="profile-t">Profile picture:</h2>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAG1BMVEXMzMyWlpacnJyxsbGqqqq3t7fFxcW+vr6jo6Or2gysAAABO0lEQVR4nO3W2W7DIBAFUMB4+f8vLt7qpUnqSAlppXMerHnwlcZjBIQAAAAAAAAAAAAAAAAAAAAAAADAJ3Q5xdTMdZPi0P8oX5N5ty7FUR7rPJXdqXxN5u2GGNvQxFgm2Zey9Dj2tytflHm7XHoKYeystJbGRwyH8kWZOrqpqWGcZj8NeleGqee4PK5nPmKYlnaKzdrfrhyVb2jb04f8lvmEHJe10oRlxezK5Y2cj6v/90x9zbIBrZ00h3LSnfejC5nqyppJYd/UrenmePghlzKVlWGnedaP1nt7aPBaprLhe595tAOl9Rc8kamr3xZ13g6CfDoT2jgM26ivZSrL26QfnNJp3H7Tc5nK5mvTPMe796b1QIxPZGrbN3X3JjttWfnmh/yZ2y8AAAAAAAAAAAAAAAAAAAAAAPwvXw5sBo8Zlw4DAAAAAElFTkSuQmCC" alt="" class="img-ex"><br>
-    <button type="submit" class="change">Change Picture</button>
+            <h2 class="profile-t">Profile picture:</h2>           
+    <img class="pimg" ng-src="{{imageSrc}}"><br>
+     <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+    <button type="submit" class="change" ng-click="upload(imageSrc)">Save Picture</button>
     </form>
     
     

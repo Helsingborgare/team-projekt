@@ -1,5 +1,5 @@
 
-var app = angular.module("App", ["ngRoute", "firebase"]);
+var app = angular.module("App", ["ngRoute", "firebase", "ngFileUpload"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
@@ -16,3 +16,5 @@ app.config(function ($routeProvider, $locationProvider) {
         });
 });
 
+
+				
