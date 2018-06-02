@@ -4,13 +4,44 @@ body {
 
 .ba-img {
   background-image: url(../img/4.jpg!d);
-  height: 400px;
+  height: 458px;
   background-position: center;
+}
+
+.ba-img {
+  -webkit-animation: bg-pan-tl 8s infinite alternate-reverse both;
+  animation: bg-pan-tl 8s infinite alternate-reverse both;
+}
+
+@-webkit-keyframes bg-pan-tl {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes bg-pan-tl {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.h2,
+h2,
+h3 {
+  font-size: 18px;
+  margin-bottom: -15px;
 }
 
 h1,
 h4 {
   text-align: center;
+  margin: 0;
 }
 
 /* udataring sida */
@@ -121,12 +152,13 @@ button {
   transition: none;
 }
 
-.img-ex{
+.img-ex {
   margin-left: 10px;
   margin-top: 5px;
 }
-.text-typ{
-font-family: 'Pacifico', cursive; 
+
+.text-typ {
+  font-family: 'Pacifico', cursive;
 }
 
 .profile-t {
@@ -193,6 +225,7 @@ font-family: 'Pacifico', cursive;
 
 .footer a {
   color: rgb(240, 111, 111);
+  font-size: 16px;
 }
 
 .footer p {
@@ -211,7 +244,7 @@ font-family: 'Pacifico', cursive;
   position: relative;
   min-height: 50px;
   border: 1px solid transparent;
-  margin-bottom: -20px;
+  margin-bottom: 0px;
 }
 
 .nav navbar-nav {
@@ -221,6 +254,7 @@ font-family: 'Pacifico', cursive;
 .navbar-inverse .navbar-nav>li>a {
   color: white;
   text-align: center;
+  font-size: 18px;
 }
 
 .bk-g:hover {
@@ -273,13 +307,13 @@ font-family: 'Pacifico', cursive;
   margin-top: 20px;
 }
 
-.events {
-}
+.events {}
 
 .first-line {
   font-family: 'Pacifico', cursive;
   color: #ff6c2f;
   margin-bottom: 55px;
+  margin-top: 20px;
 }
 
 .first-event {
@@ -291,9 +325,9 @@ font-family: 'Pacifico', cursive;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 35%;
-  height: 250px;
-  padding: 44px;
+  width: 18%;
+  height: 242px;
+  padding: 10px;
   overflow: overlay;
   border: none;
   -webkit-border-radius: 19px;
@@ -303,17 +337,18 @@ font-family: 'Pacifico', cursive;
   text-align: center;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  background: rgb(214, 218, 223);
+  background: rgb(222, 226, 231);
   -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   display: inline-block;
   margin-right: 18px;
-  margin-left: 65px;
+  margin-left: 20px;
+  border: 3px solid #ff6c2f;
 }
 
-.line-color{
+.line-color {
   color: white;
 }
 
@@ -330,18 +365,28 @@ font-family: 'Pacifico', cursive;
 
 /* sing up sida  */
 
-#sinup-sida {
+/* #sinup-sida {
   background-image: url(../img/1.jpg);
   width: 100%;
   height: 100%;
   position: fixed;
+  margin-top: 0px;
+} */
+
+#cp_widget_57fd808d-4e12-4fd1-8849-de1ea9c689ae {
+  width: 100%;
+  height: 100%;
+  position: fixed;
   margin-top: 20px;
+  background-color: #000;
+  padding-top: 10px;
+  
 }
 
 .sin-up {
   width: 35%;
-  margin: 20px 0% 0% 11%;
-  position: absolute;
+  margin: 0px 0% 0% 11%;
+  position: fixed;
 }
 
 .sign-form input {
@@ -366,14 +411,14 @@ font-family: 'Pacifico', cursive;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 97%;
-  height: 46px;
+  width: 60%;
+  height: 12px;
   cursor: pointer;
   margin: 0 auto;
   -webkit-border-radius: 40px;
   border: 4px solid rgb(255, 255, 255);
   border-radius: 40px;
-  font: normal 30px/50px "Advent Pro", Helvetica, sans-serif;
+  font: normal 17px/17px "Advent Pro", Helvetica, sans-serif;
   color: rgb(242, 247, 245);
   text-align: center;
   -o-text-overflow: clip;
@@ -389,7 +434,7 @@ font-family: 'Pacifico', cursive;
 
 .sing-up:hover {
   width: 97%;
-  font: normal 37px/50px "Advent Pro", Helvetica, sans-serif;
+  font: normal 15px/10px "Advent Pro", Helvetica, sans-serif;
   color: rgba(255, 255, 255, 1);
   background: rgb(0, 0, 0);
   font-family: 'Pacifico', cursive;
@@ -413,18 +458,25 @@ font-family: 'Pacifico', cursive;
 
 /* login sida  */
 
-.login-sida {
-  background-image: url(../img/1.jpg);
+/* .login-sida{
+  background-color: #000;
+} */
+
+#cp_widget_c6e25862-a793-4b08-9c27-1d45c1535e9c {
   width: 100%;
   height: 100%;
   position: fixed;
   margin-top: 20px;
+  opacity: 0.75px;
+  background-color: #000;
+  padding-top: 10px;
+
 }
 
 .log-in {
   width: 35%;
-  margin: 20px 0% 0% 11%;
-  position: absolute;
+  position: fixed;
+  margin: 0px 0% 0% 57%;
 }
 
 .login-form input {
@@ -437,7 +489,7 @@ font-family: 'Pacifico', cursive;
   border-radius: 5px;
   border: 4px solid rgb(0, 0, 0);
   background: content-box;
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   font-family: 'Pacifico', cursive;
 }
 
@@ -445,8 +497,12 @@ font-family: 'Pacifico', cursive;
   max-width: 100%;
   height: 120px;
 }
-.pimg{width:200px; height:200px;}
 
+.pimg {
+  width: 200px;
+  height: 200px;
+  margin-top: 40px;
+}
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -480,6 +536,13 @@ a {
   color: black;
 }
 
-button:hover, a:hover {
+button:hover,
+a:hover {
   opacity: 0.7;
+}
+
+.ev-img {
+  max-width: 100%;
+  height: 120px;
+  border-radius: 20px;
 }
