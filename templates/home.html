@@ -1,155 +1,162 @@
 <div class="ba-img">
-<h1 class="head-line">Hej Alla Helsingborgare !!</h1>
+    <h1 class="head-line">Hej Alla Helsingborgare !!</h1>
 
-<div ng-show="user">
-    <h1 class="name">Weclome {{user.displayName}}</h1>
-</div>
+    <div ng-show="user">
+        <h1 class="name">Weclome {{user.displayName}}</h1>
+    </div>
 
-<div ng-hide="user">
-    <h4 class="head-T">Sign In to publish your story</h4>
-</div>
-<div class="weather">
-    <h1>{{location}}</h1>
-<section id="current">
-    <p>Today it is <strong>{{description}}</strong></p>
-    <img class="weather-img" ng-src="{{image}}" alt="">
-    <p>It is {{temp_c}}&deg;c today</p>
-    
-</section>
-</div>
+    <div ng-hide="user">
+        <h4 class="head-T">Sign In to publish your story</h4>
+    </div>
+    <div class="weather">
+        <h1>{{location}}</h1>
+        <section id="current">
+            <p>Today it is
+                <strong>{{description}}</strong>
+            </p>
+            <img class="weather-img" ng-src="{{image}}" alt="">
+            <p>It is {{temp_c}}&deg;c today</p>
+
+        </section>
+    </div>
 </div>
 <!--profiler-->
-<div class="row  A-form" ng-if="user" ng-controller="UploadController">    
-        <form class="pictureForm" ng-submit="updatePicture(picture)">
-            <h2 class="profile-t">Profile picture:</h2>           
-    <img class="pimg" ng-src="{{imageSrc}}"><br>
-     <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
-    <button type="submit" class="change" ng-click="upload(imageSrc)">Save Picture</button>
+<div class="row  A-form" ng-if="user" ng-controller="UploadController">
+    <form class="pictureForm" ng-submit="updatePicture(picture)">
+        <h2 class="profile-t">Profile picture:</h2>
+        <img class="pimg" ng-src="{{imageSrc}}">
+        <br>
+        <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+        <button type="submit" class="change" ng-click="upload(imageSrc)">Save Picture</button>
     </form>
-    
-    
-    <form class="Email-change">
-            <p class="text-typ">Email:</p>
-            <input type="email"  ng-model="user.email" class="line">
-            <p class="text-typ">Username:</p>
-            <input type="text" ng-model="user.displayName" >
-            <p class="text-typ">About:</p>
-            <input type="text" id="aboutMsg" ng-model="user.About"><br>
-            <button  class="change" id="aboutSubmit" onclick="updateAbout()">Change information</button>
-        </form>
 
-        <form class="password-Form" ng-submit="updatePassword(password)">
-            <p class="text-typ">Write your password</p>
-                <input type="password" ng-model="user.password" placeholder="Password">
-                <p class="text-typ">Write your new password</p>
-                <input type="password" ng-model="user.newPassword" placeholder="Your new Password">
-                <p class="text-typ">Plz confirm your new password</p>
-                <input type="password" ng-model="user.newPassword"  placeholder="Confirm Password"><br>
-                <button type="submit" class="change">Change Password</button>
-        </form>
+
+    <form class="Email-change">
+        <p class="text-typ">Email:</p>
+        <input type="email" ng-model="user.email" class="line">
+        <p class="text-typ">Username:</p>
+        <input type="text" ng-model="user.displayName">
+        <p class="text-typ">About:</p>
+        <input type="text" id="aboutMsg" ng-model="user.About">
+        <br>
+        <button class="change" id="aboutSubmit" onclick="updateAbout()">Change information</button>
+    </form>
+
+    <form class="password-Form" ng-submit="updatePassword(password)">
+        <p class="text-typ">Write your password</p>
+        <input type="password" ng-model="user.password" placeholder="Password">
+        <p class="text-typ">Write your new password</p>
+        <input type="password" ng-model="user.newPassword" placeholder="Your new Password">
+        <p class="text-typ">Plz confirm your new password</p>
+        <input type="password" ng-model="user.newPassword" placeholder="Confirm Password">
+        <br>
+        <button type="submit" class="change">Change Password</button>
+    </form>
 </div>
 
 <!--profile cards-->
-<section ng-if="!user">
-<div class="card">
-    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
-    <h1>Mohammed</h1>
-    <p class="title">Front End Developer (Student)</p>
-    <p>Komvux Helsingborg</p>
-    <div style="margin: 24px 0;">
-        <a href="#">
-            <i class="fa fa-dribbble"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-facebook"></i>
-        </a>
+<section ng-if="!user" class="cards">
+    <div class="card">
+        <img class="profile-pic" src="img/Mohammed.jpg" alt="John" style="width:100%">
+        <h1 class="user-n"><u>Mezar</u></h1>
+        <p class="title">Front End Developer (Student)</p>
+        <p>Komvux Helsingborg</p>
+        <div style="margin: 24px 0;">
+            <a href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+        <p>
+            <button>Contact</button>
+        </p>
     </div>
-    <p>
-        <button>Contact</button>
-    </p>
-</div>    
-<div class="card">
-    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
-    <h1>Ikhlaq</h1>
-    <p class="title">Front End Developer (Student)</p>
-    <p>Komvux Helsingborg</p>
-    <div style="margin: 24px 0;">
-        <a href="#">
-            <i class="fa fa-dribbble"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-facebook"></i>
-        </a>
+    <div class="card">
+        <img class="profile-pic" src="img/Ikhlaq.jpg" alt="John" style="width:100%">
+        <h1 class="user-n"><u>Ikhlaq</u></h1>
+        <p class="title">Front End Developer (Student)</p>
+        <p>Komvux Helsingborg</p>
+        <div style="margin: 24px 0;">
+            <a href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+        <p>
+            <button>Contact</button>
+        </p>
     </div>
-    <p>
-        <button>Contact</button>
-    </p>
-</div>    
-<div class="card">
-    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
-    <h1>Aml</h1>
-    <p class="title">Front End Developer (Student)</p>
-    <p>Komvux Helsingborg</p>
-    <div style="margin: 24px 0;">
-        <a href="#">
-            <i class="fa fa-dribbble"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-facebook"></i>
-        </a>
+    <div class="card">
+        <img class="profile-pic" src="" alt="John" style="width:100%">
+         <h1 class="user-n"><u>Aml</u></h1>
+        <p class="title">Front End Developer (Student)</p>
+        <p>Komvux Helsingborg</p>
+        <div style="margin: 24px 0;">
+            <a href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+        <p>
+            <button>Contact</button>
+        </p>
     </div>
-    <p>
-        <button>Contact</button>
-    </p>
-</div>    
-<div class="card">
-    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
-    <h1>Shaza</h1>
-    <p class="title">Front End Developer (Student)</p>
-    <p>Komvux Helsingborg</p>
-    <div style="margin: 24px 0;">
-        <a href="#">
-            <i class="fa fa-dribbble"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#">
-            <i class="fa fa-facebook"></i>
-        </a>
+
+    <div class="card">
+        <img class="profile-pic" src="" alt="John" style="width:100%">
+         <h1 class="user-n"><u>Shaza</u></h1>
+        <p class="title">Front End Developer (Student)</p>
+        <p>Komvux Helsingborg</p>
+        <div style="margin: 24px 0;">
+            <a href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+        <p>
+            <button>Contact</button>
+        </p>
     </div>
-    <p>
-        <button>Contact</button>
-    </p>
-</div>   
-</section> 
+   
+</section>
 <!--events-->
 <div ng-if="!user" ng-controller="eventCtrl">
     <div id="events" class="events">
         <h1 class="first-line">Events</h1>
         <div ng-repeat="x in events" class="event">
-             <h2>
+            <h2>
                 {{x.organizers[0].organizer}}
             </h2>
             <h3 class="first-event">
@@ -161,7 +168,6 @@
             <h3>
                 {{x.date}}
             </h3>
-         </div>
+        </div>
     </div>
 </div>
-

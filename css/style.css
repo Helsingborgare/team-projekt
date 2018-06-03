@@ -38,10 +38,10 @@ h3 {
   margin-bottom: -15px;
 }
 
-h1,
-h4 {
+h1, h4 {
   text-align: center;
   margin: 0;
+  font-size: 16px
 }
 
 /* udataring sida */
@@ -273,6 +273,7 @@ button {
   font-family: 'Pacifico', cursive;
   padding-top: 20px;
   color: bisque;
+  font-size: 36px;
 }
 
 .head-T {
@@ -307,25 +308,32 @@ button {
   margin-top: 20px;
 }
 
-.events {}
+.events{
+  float: right;
+    width: 21%;
+    position: absolute;
+    top: 100%;
+    right: 11%;
+}
 
 .first-line {
   font-family: 'Pacifico', cursive;
   color: #ff6c2f;
   margin-bottom: 55px;
   margin-top: 20px;
+  font-size: 36px;
 }
 
-.first-event {
+.first- {
   font-family: 'Poiret One', cursive;
   /* font-size: 15px; */
 }
 
-.event {
+.event{
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 18%;
+  width: 100%;
   height: 242px;
   padding: 10px;
   overflow: overlay;
@@ -504,13 +512,6 @@ button {
   margin-top: 40px;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
 
 .title {
   color: grey;
@@ -549,17 +550,44 @@ a:hover {
 
 /* profile cards */
 
+
+.cards{
+  width: 68%;
+  height: 159vh;
+  display: block;
+  margin-top: 10px;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 47%;
   margin: auto;
   text-align: center;
   font-family: arial;
+  padding: 10px;
+  float: left;
+  margin-left: 17px;
+  border: 3px solid #000000;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+}
+
+.profile-pic{
+  width: 405.138px;
+  height: 303.850px;
+}
+
+.user-n{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-family: 'Pacifico', cursive;
 }
 
 .title {
   color: grey;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 button {
@@ -584,5 +612,3 @@ a {
 button:hover, a:hover {
   opacity: 0.7;
 }
-
-
