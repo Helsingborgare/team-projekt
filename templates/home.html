@@ -22,20 +22,20 @@
 <div class="row  A-form" ng-if="user" ng-controller="UploadController">    
         <form class="pictureForm" ng-submit="updatePicture(picture)">
             <h2 class="profile-t">Profile picture:</h2>           
-    <img class="pimg" ng-src="{{imageSrc}}"><br>
+    <img class="pimg" ng-src="{{UserImg}}"><br>
      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
     <button type="submit" class="change" ng-click="upload(imageSrc)">Save Picture</button>
     </form>
     
     
-    <form class="Email-change" ng-submit="update(user)">
+    <form class="Email-change">
             <p class="text-typ">Email:</p>
-            <input type="email" ng-model="user.email" placeholder="Email" class="line">
+            <input type="email"  ng-model="user.email" class="line">
             <p class="text-typ">Username:</p>
-            <input type="text" ng-model="user.username" placeholder="Username">
+            <input type="text" ng-model="user.displayName" >
             <p class="text-typ">About:</p>
-            <input type="text" ng-model="user.about" placeholder="About"><br>
-            <button type="submit" class="change">Change information</button>
+            <input type="text" id="aboutMsg" ng-model="user.About"><br>
+            <button  class="change" id="aboutSubmit" onclick="updateAbout()">Change information</button>
         </form>
 
         <form class="password-Form" ng-submit="updatePassword(password)">

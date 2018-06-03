@@ -27,7 +27,11 @@ app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', 'Upload',
 
     $scope.upload = function (file) {   
         console.log(file);  
+        alert('it works');
+        var firebaseRef = firebase.database().ref('users');
        
+    
+        firebaseRef.child("UserImg").set(file);
         
         var user = firebase.auth().currentUser;
         console.log(user);
