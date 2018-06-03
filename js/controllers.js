@@ -31,7 +31,7 @@ app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', 'Upload',
         var firebaseRef = firebase.database().ref('users');
        
     
-        firebaseRef.child("UserImg").set(file);
+        firebaseRef.child("imageSrc").set(file);
         
         var user = firebase.auth().currentUser;
         console.log(user);

@@ -22,7 +22,7 @@
 <div class="row  A-form" ng-if="user" ng-controller="UploadController">    
         <form class="pictureForm" ng-submit="updatePicture(picture)">
             <h2 class="profile-t">Profile picture:</h2>           
-    <img class="pimg" ng-src="{{UserImg}}"><br>
+    <img class="pimg" ng-src="{{imageSrc}}"><br>
      <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
     <button type="submit" class="change" ng-click="upload(imageSrc)">Save Picture</button>
     </form>
@@ -49,6 +49,101 @@
         </form>
 </div>
 
+<!--profile cards-->
+<section ng-if="!user">
+<div class="card">
+    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
+    <h1>Mohammed</h1>
+    <p class="title">Front End Developer (Student)</p>
+    <p>Komvux Helsingborg</p>
+    <div style="margin: 24px 0;">
+        <a href="#">
+            <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </div>
+    <p>
+        <button>Contact</button>
+    </p>
+</div>    
+<div class="card">
+    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
+    <h1>Ikhlaq</h1>
+    <p class="title">Front End Developer (Student)</p>
+    <p>Komvux Helsingborg</p>
+    <div style="margin: 24px 0;">
+        <a href="#">
+            <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </div>
+    <p>
+        <button>Contact</button>
+    </p>
+</div>    
+<div class="card">
+    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
+    <h1>Aml</h1>
+    <p class="title">Front End Developer (Student)</p>
+    <p>Komvux Helsingborg</p>
+    <div style="margin: 24px 0;">
+        <a href="#">
+            <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </div>
+    <p>
+        <button>Contact</button>
+    </p>
+</div>    
+<div class="card">
+    <img src="img/Ikhlaq.jpg" alt="John" style="width:100%">
+    <h1>Shaza</h1>
+    <p class="title">Front End Developer (Student)</p>
+    <p>Komvux Helsingborg</p>
+    <div style="margin: 24px 0;">
+        <a href="#">
+            <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </div>
+    <p>
+        <button>Contact</button>
+    </p>
+</div>   
+</section> 
 <!--events-->
 <div ng-if="!user" ng-controller="eventCtrl">
     <div id="events" class="events">
