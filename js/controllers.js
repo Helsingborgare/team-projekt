@@ -25,36 +25,36 @@ app.controller('FirstController', ['$scope', '$firebaseAuth', '$http', 'Upload',
 
     $scope.weather();
 
-    $scope.upload = function (file) {   
-        console.log(file);  
+    $scope.upload = function (file) {
+        console.log(file);
         alert('it works');
         var firebaseRef = firebase.database().ref('users');
-       
-    
+
+
         firebaseRef.child("imageSrc").set(file);
-        
+
         var user = firebase.auth().currentUser;
         console.log(user);
-        
-   
+
+
 
         user.updateProfile({
             photoURL: file
-       })
-       .then(function (s) {
-        console.log(s);
-        alert('updated profile');
-        
-        
-       })
-       .catch(function (err) {
-           console.log(err);
-           
-       });
+        })
+            .then(function (s) {
+                console.log(s);
+                alert('updated profile');
+
+
+            })
+            .catch(function (err) {
+                console.log(err);
+
+            });
 
     };
 
-    
+
 
 }]);
 

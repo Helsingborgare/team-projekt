@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+
     <title>Helsingborgare</title>
 </head>
 
@@ -22,21 +26,21 @@
                 <a class="navbar-brand" href="#"> allahelsingborgare.se</a>
             </div>
             <ul class="nav navbar-nav">
-            <li class="bk-g">
-                <a class="bk-g" href="#!/">Home</a>
-            </li>
-            <li ng-if="!user"class="bk-g">
-                <a class="bk-g" href="#!/sign-up">
-                <span class="glyphicon glyphicon-user"></span>Sign Up</a>
-            </li>
-            <li ng-if="!user"class="bk-g">
-                <a  class="bk-g"href="#!/login">
-                    <span class="glyphicon glyphicon-log-in"></span>Login</a>
-            </li>
-            <li ng-if="user"class="bk-g">
-                <a class="bk-g" href ng-click="signOut()">Sign Out</a>
-            </li>
-            </ul> 
+                <li class="bk-g">
+                    <a class="bk-g" href="#!/">Home</a>
+                </li>
+                <li ng-if="!user" class="bk-g">
+                    <a class="bk-g" href="#!/sign-up">
+                        <span class="glyphicon glyphicon-user"></span>Sign Up</a>
+                </li>
+                <li ng-if="!user" class="bk-g">
+                    <a class="bk-g" href="#!/login">
+                        <span class="glyphicon glyphicon-log-in"></span>Login</a>
+                </li>
+                <li ng-if="user" class="bk-g">
+                    <a class="bk-g" href ng-click="signOut()">Sign Out</a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right"></ul>
 
         </div>
@@ -44,10 +48,23 @@
 
     <div ng-view></div>
 
+    <!--Mapbox-->
 
-<footer class="footer">
-<p>Created by team <a href="#">@LookAround</a> </p>
-</footer>
+    <div id='map'></div>
+
+    <div class='map-overlay-container'>
+        <div class='map-overlay'>
+            <h2 id='location-title'></h2>
+            <p id='location-description'></p>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <p>Created by team
+            <a href="#">@LookAround</a>
+        </p>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
@@ -59,21 +76,21 @@
 
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <script src="js/ng-shim.min.js"></script>   
-    <script src="js/upload.min.js"></script>   
-<script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCXJormr0aE-LjTKjtw7wbdyQEPV4Kfrxk",
-      authDomain: "look-around-89d60.firebaseapp.com",
-      databaseURL: "https://look-around-89d60.firebaseio.com",
-      projectId: "look-around-89d60",
-      storageBucket: "look-around-89d60.appspot.com",
-      messagingSenderId: "538552151356"
-    };
-    firebase.initializeApp(config);
-  </script>
-<script src="js/aboutjs.js"></script>
+    <script src="js/ng-shim.min.js"></script>
+    <script src="js/upload.min.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCXJormr0aE-LjTKjtw7wbdyQEPV4Kfrxk",
+            authDomain: "look-around-89d60.firebaseapp.com",
+            databaseURL: "https://look-around-89d60.firebaseio.com",
+            projectId: "look-around-89d60",
+            storageBucket: "look-around-89d60.appspot.com",
+            messagingSenderId: "538552151356"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/aboutjs.js"></script>
 </body>
 
 </html>

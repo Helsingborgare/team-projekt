@@ -613,4 +613,33 @@ button:hover, a:hover {
   opacity: 0.7;
 }
 
-/* tack */
+/* Mapbox */
+
+#map {
+    
+  bottom: 0;
+  width: 65%;
+  height: 400px;
+  margin-left: 18px;
+}
+
+.map-overlay-container {
+  position:absolute;
+  width: 67%;
+  left: 8px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.map-overlay {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.20);
+}
+
+.map-overlay h2,
+.map-overlay p {
+  margin: 0 0 10px;
+}
